@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>微博用户发言信息列表制作</title>
+	<style>
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-size: 12px;
+			font-family: "Arial", "sans-serif", "微软雅黑", "宋体", "Tahoma";
+			}
+		.demo01{width:600px; position:relative; overflow: hidden;}
+		.demo01 .left{width:100px; float:left;}
+		.demo01 .left img{margin-left:20px;}
+		.demo01 .right{width:458px; padding:20px; float: right; background: #9CF; border: 1px solid #ccc}
+		.demo01 .right p{line-height: 25px;}
+		.demo01 .right span{position: absolute; right: 20px; top: 10px;}
+
+		.demo02{width:600px; position:relative; overflow: hidden; }
+		.demo02 img{float:left; margin-left:20px;}
+		.demo02 .right{width:458px; padding:20px; float: right; background: #9CF; border: 1px solid #ccc}
+		.demo02 .right p{line-height: 25px;}
+		.demo02 .right span{position: absolute; right: 20px; top: 10px;}
+
+		.demo03{width:458px; padding:20px; background: #9CF; border: 1px solid #ccc; margin-left: 100px; position: relative;}
+		.demo03 img{float:left; margin:-20px 0 0 -100px;}
+		.demo03 p{line-height: 25px;}
+		.demo03 span{position: absolute; right: 20px; top: 10px;}
+	</style>
+</head>
+<body>
+	<!--demo01 初学者思路-->
+	<div class="demo01">
+		<div class="left">
+			<img src="images/head01.jpg"/>
+		</div>
+		<div class="right">
+			<h6>樱桃小丸子</h6>
+			<p>balabalabala</p>
+			<span>10分钟之前</span>
+		</div>
+	</div>
+	<!--demo02 中级思路 简化图片样式-->
+	<br/>
+	<div class="demo02">
+		<img src="images/head01.jpg"/>
+		<div class="right">
+			<h6>樱桃小丸子</h6>
+			<p>balabalabala</p>
+			<span>10分钟之前</span>
+		</div>
+	</div>
+	<!--demo03 高级思路 整体右移然后图片移出 注意相对于谁进行绝对定位-->
+	<br/>
+	<div class="demo03">
+		<img src="images/head01.jpg"/>
+		<h6>樱桃小丸子</h6>
+		<p>balabalabala</p>
+		<span>10分钟之前</span>
+	</div>
+</body>
+</html>

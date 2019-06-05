@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>垂直菜单</title>
+	<style>
+		*{margin:0; padding: 0; font-size: 14px}
+		ul{list-style: none; height: 50px; border-bottom: 5px solid #F60; padding-left: 30px}
+		/*li浮动后，ul会失去高度和宽度，所以对ul进行整体背景设置时需要先定义宽和高*/
+		li{float:left; margin-top: 20px}
+		a{text-decoration: none; display: block; height: 30px; line-height: 30px; width: 120px; background-color: #ccc; margin-bottom: 1px; text-align: center; }
+		.on, a:hover{color: #fff; background-color: #F60; height: 40px; margin-top: -10px; line-height:40px;}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+	<script>
+	$(function(){
+		$('a').hover(
+			function(){
+				$(this).animate({"width":"160px"},200);
+			},
+			function(){
+				$(this).animate({"width":"120px"},200);
+			}
+			)
+	})
+	</script>
+</head>
+<body>
+	<ul>
+		<li><a class="on" href="#">首    页</a></li>
+		<li><a href="#">新闻快讯</a></li>
+		<li><a href="#">产品展示</a></li>
+		<li><a href="#">售后服务</a></li>
+		<li><a href="#">联系我们</a></li>
+	</ul>	
+</body>
+</html>
