@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>当前系统时间</title>
+<link rel="stylesheet" href="style.css"  />
+<script language="javascript" type="text/javascript">
+	window.onload = function(){
+		showTime();
+	}
+	function checkTime(i){
+		return i<10? "0"+i : i;
+	}
+	function showTime(){
+		var myDate = new Date();
+		var year = myDate.getFullYear();
+		var month = myDate.getMonth();
+		var date = myDate.getDate();
+		var d = myDate.getDay();
+		var h = myDate.getHours();
+		var m = myDate.getMinutes();
+		m = checkTime(m);
+		var s = myDate.getSeconds();
+		s = checkTime(s);weekday[0]="星期一";
+		var weekday = new Array(7);
+		weekday[1]="星期一";
+		weekday[2]="星期二";
+		weekday[3]="星期三";
+		weekday[4]="星期四";
+		weekday[5]="星期五";
+		weekday[6]="星期六";
+		weekday[0]="星期日";
+		document.getElementById('show').innerHTML = year +'年' +month+'月'+date+'日 '+ weekday[d] + h + ':' + m + ':'+ s;
+		setTimeout(showTime, 500);
+	}
+</script>
+</head>
+<body>
+<div class="content1">
+  <div id="show">显示时间的位置</div>
+</div>
+</body>
+</html>

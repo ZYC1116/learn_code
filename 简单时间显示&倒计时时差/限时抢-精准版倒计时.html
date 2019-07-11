@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>当前系统时间</title>
+<link rel="stylesheet" href="style.css"  />
+<script language="javascript" type="text/javascript">
+	window.onload = function(){
+		var curtime = new Date();
+		var endtime = new Date("2020,6,6");
+		var lefttime = (endtime.getTime() - curtime.getTime())/(24*60*60*1000);
+		lefttime = Math.ceil(lefttime);
+		//alert(lefttime);
+		document.getElementById('show').innerHTML = '距离高考还有' + lefttime + '天';
+	}
+</script>
+</head>
+<body>
+<div class="content1">
+  <div id="show">显示时间的位置</div>
+</div>
+</body>
+</html>
