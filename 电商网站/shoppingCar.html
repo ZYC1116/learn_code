@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购物车</title>
+<link style="text/css" rel="stylesheet" href="style/reset.css" />
+<link style="text/css" rel="stylesheet" href="style/main.css" />
+
+</head>
+
+<body>
+  <div class="headerBar">
+    <div class="topBar">
+      <div class="comWidth">
+         <div class="leftArea">
+            <a href="#" class="collection">收藏慕课</a>
+         </div>
+         <div class="rightArea">
+           欢迎来到慕课网！<a href="#">[登陆]</a><a href="#">[免费注册]</a>
+         </div>
+      </div>
+    </div><!--topBar end-->
+    <div class="logoBar">
+      <div class="comWidth">
+        <div class="logo fl">
+          <a href="#"><img src="images/icon/慕课网.png" alt="慕课网"  /></a>
+        </div>
+        <div class="stepBox fr">
+          <div class="step"></div>
+          <ul class="step_text">
+            <li class="s01">我的购物车</li>
+            <li class="s02">填写核对订单</li>
+            <li class="s03">订单提交成功</li>
+          </ul>
+        </div>
+      </div>
+    </div><!--logoBar end-->
+    <div class="shoppingCart comWidth">
+      <div class="shopping_item">
+        <h3>收货信息</h3>
+        <div class="shopping_cont padding_shop">
+          <ul class="shoppinglist clearfix">
+            <li><span><em>*</em>选择地区：</span>
+              <div class="select">
+              海淀区五环内
+              <ul class="show_select hide">
+                <li>上帝</li>
+                <li>上帝</li>
+                <li>上帝</li>
+              </ul>
+              </div>
+            </li>
+            <li><span><em>*</em>详细地址：</span><input type="text" placeholder="最多输入20个汉字" style="width: 390px;" /></li>
+            <li><span><em>*</em>收 货 人：</span><input type="text" placeholder="最多10个汉字"/></li>
+            <li><span><em>*</em>手  机：</span><input type="text" placeholder="如：123123"/>&nbsp;或固定电话&nbsp;<input type="text" placeholder="区号" style="width: 64px;" />&nbsp;-&nbsp;<input type="text" placeholder="电话号码" style="width: 90px;"/>&nbsp;-&nbsp;<input type="text" placeholder="分机号（可选）" style="width: 90px;"/></li>
+            <li><input type="button" class="confimation" /></li>
+          </ul>
+        </div>
+      </div>
+      <div class="hr_15"></div>
+      <div class="shopping_item">
+        <h3>支付方式</h3>
+        <div class="shopping_cont padding_shop">
+          <ul class="shoppinglist clearfix">
+            <li><input type="radio" class="radio" id="r1" /><label for="r1">微信支付</label></li>
+            <li><input type="radio" class="radio" id="r2" /><label for="r2">货到付款</label></li>
+          </ul>
+        </div>
+      </div>
+      <div class="hr_15"></div>
+      <div class="shopping_item">
+        <h3>送货清单<a href="#" class="back">返回购物车修改</a></h3>
+        <div class="shopping_cont pb_10">
+          <div class="cart_inner">
+            <div class="cart_head clearfix">
+              <div class="cart_item" style="width: 440px; padding-left: 30px">商品名称</div>
+              <div class="cart_item" style="width: 134px;">单价</div>
+              <div class="cart_item" style="width: 136px">返现</div>
+              <div class="cart_item" style="width: 135px">数量</div>
+              <div class="cart_item" style="width: 123px;">小计</div>
+            </div>
+            <div class="card_cont clearfix">
+              <div class="cart_item" style="width: 440px; padding-left: 30px">
+                <div class="cart_shopInfo clearfix">
+                  <img src="images/des_sm.jpg" alt="" />
+                  <div class="cart_info_text">
+                    <p class="cart_link"><a href="#">海信，三门冰箱（银色）</a></p>
+                    <p class="cart_info">【赠】冰箱贴</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cart_item" style="width: 134px;">¥1459.00</div>
+              <div class="cart_item" style="width: 136px">¥0.00</div>
+              <div class="cart_item" style="width: 135px">1</div>
+              <div class="cart_item" style="width: 123px; color:red">¥1459.00</div>
+            </div>
+            <p class="cart_msg">若有问题请留言</p>
+            <p class="cart_pro"><i class="cart_icon"></i>注意！以下商品无法购买</p>
+            <div class="card_cont_nobro clearfix">
+              <div class="cart_item" style="width: 440px; padding-left: 30px">
+                <div class="cart_shopInfo clearfix">
+                  <img src="images/des_sm.jpg" alt="" />
+                  <div class="cart_info_text">
+                    <p class="cart_link"><a href="#">海信，三门冰箱（银色）</a></p>
+                    <p class="cart_info">【赠】冰箱贴</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hr_15"></div>
+      <div class="shopping_item">
+        <h3>订单结算</h3>
+        <div class="shopping_cont_nobro padding_shop clearfix">
+          <div class="cart_count fr">
+            <p class="cart_rmb">总计:<span>¥1459.00</span></p>
+            <input type="button" value="提交订单" class="cart_btn" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hr"></div>
+    <div class="footer">
+      <p><a href="#">慕课简介</a><i>|</i><a href="#">慕课公告</a><i>|</i><a href="#">招纳贤士</a><i>|</i><a href="#">联系我们</a><i>|</i>客服热线：400-675-1234</p>
+      <p>Copyright&copy;2006 - 2014 慕课版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;某市公安局XX分局备案编号：123456789123</p>
+
+      <p class="web"><a href="#"><img src="images/user.gif" alt="logo"  /></a><a href="#"><img src="images/user.gif"  /></a><a href="#"><img src="images/user.gif"  /></a><a href="#"><img src="images/user.gif"  /></a></p>
+    </div>
+</body>
+</html>
