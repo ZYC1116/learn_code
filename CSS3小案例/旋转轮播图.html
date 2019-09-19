@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		section{
+			width: 300px;
+			height: 200px;
+			margin: 100px auto;
+			background: url(cat.jpg) no-repeat;
+			background-size: cover;
+			position: relative;
+			transform-style: preserve-3d; 
+			/*让父盒子里面的子盒子以3D效果显示*/
+			transition: all 5s linear;
+		}
+		section:hover{
+			transform: rotateY(360deg);
+		}
+		section div{
+			width: 100%;
+			height: 100%;
+			background: url(dog.jpg) no-repeat;
+			background-size: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		section div:nth-child(1){
+			transform: rotateY(0deg) translateZ(400px);
+		}
+		section div:nth-child(2){
+			transform: rotateY(60deg) translateZ(400px);
+		}
+		section div:nth-child(3){
+			transform: rotateY(120deg) translateZ(400px);
+		}
+		section div:nth-child(4){
+			transform: rotateY(180deg) translateZ(400px);
+		}
+		section div:nth-child(5){
+			transform: rotateY(2400deg) translateZ(400px);
+		}
+		section div:nth-child(6){
+			transform: rotateY(300deg) translateZ(400px);
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+</body>
+</html>
