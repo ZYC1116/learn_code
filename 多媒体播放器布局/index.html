@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>视频播放</title>
+    <!--字体图标库-->
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/player.css"/>
+</head>
+<body>
+<figure>
+    <figcaption>视频播放器</figcaption>
+    <div class="player">
+        <video src="./video/fun.mp4"></video>
+        <div class="controls">
+            <!--播放/暂停-->
+            <a href="javascript:;" class="switch fa fa-play"></a>
+            <!--播放进度-->
+            <div class="progress">
+                <div class="line"></div>
+                <div class="bar"></div>
+            </div>
+            <!--当前播放时间/播放总时长-->
+            <div class="timer">
+                <span class="current">00:00:00</span> / <span class="total">00:00:00</span>
+            </div>
+            <!--全屏/取消全屏-->
+            <a href="javascript:;" class="expand fa fa-arrows-alt"></a>
+        </div>
+    </div>
+</figure>
+<script src="./js/jquery.min.js"></script>
+<script>
+    var video = $("video").get(0);   //把jQuery对象转换为原生DOM对象
+
+    function formatTime(time){
+        var h = Math.floor(time / 3600);
+        var m = Math.floor(time % 3600 / 60);
+        var s = Math.floor(time % 60);
+        return (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s)
+    }
+
+    //浏览器加载完成后显示video
+    video.oncanplay = function(){
+        $("video").show();
+        var totalTime = formatTime(video.duration);
+        $(".total").html(totalTime);
+    }
+
+    //播放和暂停按钮
+    $(".switch").on("click", function(){
+        if($(this).hasClass("fa-play")){
+            video.play();
+            $(this).addClass("fa-pause").removeClass("fa-play");
+        } else if($(this).hasClass("fa-pause")){
+            video.pause();
+            $(this).addClass("fa-play").removeClass("fa-pause");
+        }
+    })
+
+    //进度条显示
+    video.ontimeupdate = function(){
+        var w = video.currentTime / video.duration * 100 + "%";
+        $(".line").css("width", w);
+        $(".current").html(formatTime(video.currentTime));
+    }
+
+    //全屏操作
+    $(".expand").on("click", function(){
+        if($(this).hasClass("fa-arrows-alt")){
+            video.webkitRequestFullScreen();
+            $(this).addClass("fa-compress").removeClass("fa-arrows-alt");
+        } else if($(this).hasClass("fa-compress")){
+            document.webkitCancelFullScreen();
+            $(this).addClass("fa-arrows-alt").removeClass("fa-compress");
+        }
+    })
+    
+    //视频播放完毕之后，重置
+    video.onended = function(){
+        video.currentTime = 0;
+        $(".switch").addClass("fa-play").removeClass("fa-pause");
+        document.webkitCancelFullScreen();
+        $(".expand").addClass("fa-arrows-alt").removeClass("fa-compress");
+        $(".line").css("width", "0");
+    }
+
+    //点击快进
+    $(".bar").on("click", function(){
+        //点击的位置 / bar的长度 * 总的时长 = 当前视频的播放位置(时间)
+        var offset = event.offsetX;
+        var current = offset / $(this).width() * video.duration;
+        video.currentTime = current;
+    })
+
+</script>
+</body>
+</html>
